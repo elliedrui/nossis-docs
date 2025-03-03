@@ -86,7 +86,7 @@ jobs:
           latest: true
           fileName: '*'
           tarBall: true
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
       - if: (github.ref_name == 'main') || startsWith(github.ref_name, 'releases/')
         run: |
           tar -xz --strip-components=1 -f ./*.tar.gz
