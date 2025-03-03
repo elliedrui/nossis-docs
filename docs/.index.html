@@ -1,28 +1,204 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>Redirecting to the latest version of the documentation</title>
-    <meta charset="utf-8">
-    <!-- <meta http-equiv="refresh" content="0; url=en/$LATEST_VERSION/index.html"> -->
-    <link rel="canonical" href="en/$LATEST_VERSION/index.html">
-  </head>
-  <body>
-    <main>
-      <p><a href="en/$LATEST_VERSION/index.html">Click here to go to
-          the latest version of the documentation.</a></p>
-    </main>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Love for Minecraft & FiveM</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            background-color: #1a1a1a;
+            color: #ffffff;
+            background-image: url('https://www.minecraft.net/etc.clientlibs/minecraft/clientlibs/main/resources/img/minecraft-creeper-face.jpg');
+            background-attachment: fixed; /* Changed from scroll to fixed */
+            background-size: 128px; /* Added size for creeper pattern */
+            min-height: 100vh;
+            position: relative; /* Added for z-index context */
+        }
+
+        /* Cloud layer */
+        body::after {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://www.minecraft.net/etc.clientlibs/minecraft/clientlibs/main/resources/img/clouds.png');
+            opacity: 0.3;
+            animation: cloud-move 120s linear infinite;
+            pointer-events: none;
+            z-index: 1; /* Ensure clouds stay behind content */
+        }
+
+        .header {
+            position: relative; /* Added for z-index */
+            z-index: 3; /* Higher than clouds */
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+                        url('https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Minecraft_cover.png/1200px-Minecraft_cover.png');
+            background-size: cover;
+            background-position: center;
+            text-align: center;
+            padding: 100px 20px;
+        }
+
+        .nav {
+            position: sticky;
+            top: 0;
+            z-index: 4; /* Higher than header */
+        }
+
+        .container {
+            position: relative;
+            z-index: 2; /* Above clouds but below header/nav */
+        }
+
+        /* Rest of your CSS remains the same */
+        @keyframes cloud-move {
+            from { background-position: 0 0; }
+            to { background-position: 1000px 0; }
+        }
+
+        .header h1 {
+            font-size: 4em;
+            text-shadow: 3px 3px #3b3b3b;
+            margin-bottom: 20px;
+            background: linear-gradient(45deg, #4CAF50, #2196F3);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .nav {
+            background-color: #333;
+            padding: 15px;
+        }
+
+        .nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 20px;
+            font-size: 1.2em;
+            transition: color 0.3s;
+        }
+
+        .nav a:hover {
+            color: #4CAF50;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .section {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 30px;
+            margin: 40px 0;
+            box-shadow: 0 0 20px rgba(0,0,0,0.3);
+        }
+
+        .minecraft-section {
+            border: 3px solid #4CAF50;
+        }
+
+        .fivem-section {
+            border: 3px solid #2196F3;
+        }
+
+        .pixel-art {
+            font-family: 'Minecraft', sans-serif;
+            font-size: 1.2em;
+        }
+
+        .game-image {
+            width: 300px;
+            border-radius: 10px;
+            margin: 20px;
+            box-shadow: 5px 5px 15px rgba(0,0,0,0.5);
+        }
+
+        .left {
+            float: left;
+            margin-right: 30px;
+        }
+
+        .right {
+            float: right;
+            margin-left: 30px;
+        }
+
+        footer {
+            background-color: #333;
+            text-align: center;
+            padding: 20px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            z-index: 3; /* Keep footer above clouds */
+        }
+
+        @media (max-width: 768px) {
+            .game-image {
+                width: 100%;
+                margin: 20px 0;
+                float: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Body content remains the same -->
+    <header class="header">
+        <h1>Minecraft & FiveM</h1>
+        <p class="pixel-art">Building Worlds • Creating Adventures • Endless Possibilities</p>
+    </header>
+
+    <nav class="nav">
+        <a href="#minecraft">Minecraft</a>
+        <a href="#fivem">FiveM</a>
+        <a href="#creations">Creations</a>
+    </nav>
+
+    <div class="container">
+        <section id="minecraft" class="section minecraft-section">
+            <img src="https://upload.wikimedia.org/wikipedia/en/5/51/Minecraft_cover.png" alt="Minecraft" class="game-image left">
+            <h2>My Minecraft Journey</h2>
+            <p>From building my first dirt house to creating massive redstone contraptions, Minecraft has been my creative outlet for years. The endless possibilities of block-based construction combined with survival elements make it my favorite game of all time.</p>
+            <br>
+            <p>Favorite aspects:</p>
+            <ul>
+                <li>Redstone engineering</li>
+                <li>Mega builds</li>
+                <li>Modded gameplay</li>
+                <li>Community servers</li>
+            </ul>
+        </section>
+
+        <section id="fivem" class="section fivem-section">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/FiveM-Logo.png" alt="FiveM" class="game-image right">
+            <h2>FiveM Experiences</h2>
+            <p>FiveM has allowed me to explore a whole new dimension of gaming through custom GTA V servers. From roleplaying communities to custom racing modes, the creativity of the FiveM modding community never ceases to amaze me.</p>
+            <br>
+            <p>What I love about FiveM:</p>
+            <ul>
+                <li>Custom server modes</li>
+                <li>Roleplaying communities</li>
+                <li>Vehicle modifications</li>
+                <li>Scripting possibilities</li>
+            </ul>
+        </section>
+    </div>
+
     <footer>
-      <small>
-        <p>nossis-docs, serverless hosting for static, private web
-          sites that works like GitHub Pages
-          <br>Copyright &copy; 2024&nbsp; Matthew X. Economou
-          <br>License AGPLv3+:
-          <a href="https://www.gnu.org/licenses/agpl.html">GNU AGPL
-            version 3 or later</a>.
-          <br>Source code for this version can be found at
-          <a href="https://github.com/irtnog/nossis-docs">https://github.com/irtnog/nossis-docs</a>.
-        </p>
-      </small>
+        <p>© 2025 My Gaming Passion Project • Follow me on [Social Links]</p>
     </footer>
-  </body>
+</body>
 </html>
